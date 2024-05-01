@@ -5,11 +5,11 @@ namespace Trabalho.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ClientsController : ControllerBase
+public class ClientesController : ControllerBase
 {
     private readonly ClientDbContext _context;
 
-    public ClientsController(ClientDbContext context)
+    public ClientesController(ClientDbContext context)
     {
         _context = context;
     }
@@ -91,6 +91,6 @@ public class ClientDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql("your_connection_string_here");
+        optionsBuilder.UseSqlite("Data Source=trabalho_api.db");
     }
 }
